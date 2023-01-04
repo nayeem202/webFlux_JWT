@@ -30,7 +30,7 @@ public class JWTService {
         JwtBuilder builder = Jwts.builder()
                 .setSubject(userName)
                 .setIssuedAt(Date.from(Instant.now()))
-                .setExpiration(Date.from(Instant.now().plus(15, ChronoUnit.MINUTES)))
+                .setExpiration(Date.from(Instant.now().plus(1, ChronoUnit.MINUTES)))
                 .signWith(key);
         return builder.compact();
     }
